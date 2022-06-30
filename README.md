@@ -69,6 +69,41 @@ Run the test suite to get started. This is a test-driven lab.
 
 ***
 
+### Bonus: Building a Program With Classes
+
+We've set up an executable file for you in `bin/time_for_school.py`. It
+contains some code for a Ruby command line interface (CLI) application. The
+code is in a `bin` folder because since we are following file structure
+conventions for building a CLI application.
+
+The syntax at the top of the file, `#!/usr/bin/env python`, is known as a
+[python shebang][python shebang]. Technically, our program will still work
+without it. The benefit of having this line is that we can turn the program
+into an executable file by running `chmod +x bin/time_for_school.py` from the
+terminal, which specifies that our program should be executable from the
+command line without using `python` at the beginning. You'll see this directive
+a lot in Python CLI applications.
+
+[python shebang]: https://www.delftstack.com/howto/python/python-shebang/
+
+Check out the code there and run the file with `python bin/time_for_school.py` in
+your terminal. Get a feel for how the code we wrote works and what methods are
+available to our student and teacher instances thanks to inheritance.
+
+Play around with it a bit more by trying out the following in this file:
+
+- We have a new user, Jim, who is just here to audit a few classes. He is
+  neither a teacher nor a student. Create a local variable, `jim`, and point it
+  equal to an instance of the `User` class. Then, give `jim` a first and last
+  name. What happens when you try to call `#learn` on `jim`?
+- Continue to operate on our student, `steve`. Have `avi` teach him some more
+  important knowledge.
+- Create a new student and have that student learn a few things from `avi` as
+  well.
+- Then, `puts` out the existing knowledge of each student.
+
+***
+
 ## Conclusion
 
 We've seen how to set up inheritance to share behavior from one class to another
