@@ -5,6 +5,8 @@
 - Reduce repeated code and enhance objects using inheritance.
   - Define classes that inherit from a shared parent, or superclass.
   - Define methods unique to those classes.
+  - Define methods in the child class that use the `super` keyword to inherit
+    from and augment methods in the parent class.
 - Accomplish complex programming tasks using knowledge from previous modules.
 
 ***
@@ -45,27 +47,48 @@ to that class.
 Run the test suite to get started. This is a test-driven lab.
 
 1. Define the `User` class such that a user is instantiated with a
-   `first_name` and `last_name`. These should be saved as instance attributes.
+   `first_name` and `last_name`. These should be saved as attributes.
+
 2. We've given you a barebones `Teacher` class in `lib/teacher.py`. Change the
    class definition so that the `Teacher` class inherits from the `User` class.
    Run the test suite and notice that you are passing some tests for the
    `Teacher` class, even without writing any code inside that class. That is
    because it will inherit the `first_name` and `last_name` attributes from the
-   `User` class you told it to inherit from.
-3. We've given you a class constant `KNOWLEDGE`, that points to a list of
-   knowledge strings. Write a method, `teach()` that returns a random element
-   from that list. We have imported
-   [Python's `random` library](https://docs.python.org/3/library/random.html)
-   to assist you.
+   `User` class you told it to inherit from. We've given you a list of
+   knowledge strings below; modify the `Teacher` class so that it initializes
+   with this list stored as an attribute, `self.knowledge`.
+
+    ```py
+    knowledge = [
+        "str is a data type in Python",
+        "programming is hard, but it's worth it",
+        "JavaScript async web request",
+        "Python function call definition",
+        "object-oriented teacher instance",
+        "programming computers hacking learning terminal",
+        "pipenv install pipenv shell",
+        "pytest -x flag to fail fast",
+    ]
+    ```
+
+3. Expand the `teach()` method in the `Teacher` class so that it returns a
+   random element from `self.knowledge`. We have imported [Python's `random`
+   library](https://docs.python.org/3/library/random.html) to assist you. You
+   will want to use the `random.randint()` method to choose a random index in
+   `self.knowledge`. This method takes two arguments, a minimum number and a
+   maximum number, and returns a random element in the range.
+
 4. We've given you a barebones `Student` class. Change the class definition so
    that it inherits from the `User` class. Run the test suite and notice that
    you are passing some tests for the `Student` class, even without writing any
    code inside that class. That is because it will inherit the `first_name` and
    `last_name` attributes from the `User` class you told it to inherit from.
-5. Individual students should initialize with an instance variable,
-   `self.knowledge`, that points to an empty list.
-6. Define a method, `learn()`, that takes in a string and adds that string to the
-   student's `self.knowledge` list.
+
+5. Individual students should initialize with an attribute, `self.knowledge`,
+   that points to an empty list.
+
+6. Expand the `learn()` method in the `Student` class so that in takes in a
+   string and adds that string to the student's `self.knowledge` list.
 
 ***
 

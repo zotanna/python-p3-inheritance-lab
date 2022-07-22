@@ -3,6 +3,8 @@
 from lib.teacher import Teacher
 from lib.user import User
 
+my_teacher = Teacher("My", "Teacher")
+
 class TestTeacher:
     '''Class "Teacher" in teacher.py'''
 
@@ -12,14 +14,13 @@ class TestTeacher:
 
     def test_initializes_with_names(self):
         '''initializes with first and last name.'''
-        my_teacher = Teacher("My", "Teacher")
         assert((my_teacher.first_name, my_teacher.last_name) == ("My", "Teacher"))
 
-    def test_has_class_attribute_knowledge(self):
-        '''has a class attribute called "KNOWLEDGE", a list with len > 0.'''
-        assert(isinstance(Teacher.KNOWLEDGE, list) and len(Teacher.KNOWLEDGE) > 0)
+    def test_has_attribute_knowledge(self):
+        '''has an attribute called "knowledge", a list with len > 0.'''
+        assert(isinstance(my_teacher.knowledge, list) and len(my_teacher.knowledge) > 0)
 
     def test_can_teach(self):
-        '''teaches from list of KNOWLEDGE.'''
+        '''teaches from list of knowledge.'''
         my_teacher = Teacher("My", "Teacher")
-        assert(my_teacher.teach() in Teacher.KNOWLEDGE)
+        assert(my_teacher.teach() in my_teacher.knowledge)

@@ -3,4 +3,6 @@
 from lib.user import User
 
 class Student(User):
-    pass
+    
+    def learn(self):
+        pass
