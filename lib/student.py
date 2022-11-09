@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from lib.user import User
+from user import User
 
 class Student(User):
     
