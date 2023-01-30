@@ -44,7 +44,11 @@ to that class.
 
 ## Instructions
 
-Run the test suite to get started. This is a test-driven lab.
+This is a test-driven lab. Because "Student" comes before "Teacher"
+alphabetically and we're aiming to test them in the opposite order, start off
+with `pytest lib/testing/user_test.py`. (If you're already in `lib/`, leave it
+out). Continue this process for each tested class. And
+submit your work when complete.
 
 1. Define the `User` class such that a user is instantiated with a
    `first_name` and `last_name`. These should be saved as attributes.
